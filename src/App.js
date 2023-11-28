@@ -18,7 +18,6 @@ function App() {
                     <Route path="/soup" element={<Soup/>}/>
                     <Route path="/salad" element={<Salad/>}/>
 
-
                 </Routes>
             </BrowserRouter>
 
