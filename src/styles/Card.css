@@ -1,0 +1,49 @@
+.card {
+  border: 5px solid #9fd3c7;
+  border-radius: 8px;
+  background-size:cover;
+  overflow: hidden;
+  display: flex;
+  width: 18rem;
+  height: 150px;
+  background: red;
+  color: #000;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 10px;
+  list-style: none;
+}
+.card-img {
+  width: 18rem;
+  height: 18rem;
+  object-fit : cover;
+  }
+  .card-content {
+    padding: 10px;
+    font-size: 16px; 
+    word-spacing: auto;
+    color: white;
+    display: inline-table;
+    background-color: blueviolet;
+  }
+
+  .card-baslik {
+    padding: 10px;
+    font-size: 26px; /* 16 piksel olarak belirtilmiş bir yazı boyutu */
+    color: blueviolet;
+    background-color: #e4cdcd;
+
+  }
+
+  .card-text {
+    border: 10px solid black;
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    text-align: justify;
+  }
+
+  

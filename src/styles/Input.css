@@ -1,0 +1,16 @@
+.aramaAlani {
+    border: 10px solid #745468;
+    text-align: center;
+    margin: 1px;
+    height: 60px;
+    display: inline-block; /* Kartları yan yana sıralamak için inline-block kullanıyoruz */
+    width: 100%;
+    color: red;
+}
+
+.aramaMetni {
+    padding: 100px;
+    width: 100px;
+    height: 100px;
+}
+

@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+import AppNavbar from "./AppNavbar";
 import yemekList from '../database/YemekList.json'
+import Card from '../styles/Card.css';
+import ListGroup from 'react-bootstrap/ListGroup';
+import Input from '../styles/Input.css'
+
+
 
 export default class YemekFiltreleyici extends Component {
 
@@ -20,10 +26,10 @@ export default class YemekFiltreleyici extends Component {
 
     handleFiltreChange = (e) => {
         const filtre = e.target.value; //target value bir react fonskiyonu olup input alma işini
-        this.setState( { filtre } );
+        this.setState({ filtre });
         this.filtreVeriler(filtre);
     }
-    
+
     filtreVeriler = (filtre) => {
         const { yemekList } = this.state;
         const filtreliVeriler = yemekList.filter(veri => veri.malzemeler.includes(filtre));
@@ -34,31 +40,48 @@ export default class YemekFiltreleyici extends Component {
         const { yemekList } = this.state;
 
         return (
-            <div>
-                <ul>
-                    {yemekList.map(yemek => (
-                        <li key={yemek.id}>
-                            {yemek.yemek}
-                            {yemek.malzemeler}
-                            <img src={yemek.href} alt="Örnek Resim" />
 
-                        </li>
-                    ))}
-                </ul>
-                <input
+            <div>
+
+                <input className="aramaAlani"
                     type="text"
-                    placeholder="Filtrele"
+                    placeholder="Ne Yemek Yapmak İstiyorsunuz?"
                     value={this.state.filtre}
                     onChange={this.handleFiltreChange}
+
                 />
                 <ul>
-                    {this.state.filtreliVeriler.map((veri) => (
-                        <li key={veri.id}>
-                            {veri.yemekAdı}
-                            {veri.malzemeler}
-                        </li>
+                    {this.state.filtreliVeriler.map((yemek) => (
+                        <li className="card" key={yemek.id}>
+                        <img className="card-img" src={yemek.href} alt="Örnek Resim" />
+                        <div className="card-baslik">
+                            {yemek.yemekAdı}
+                        </div>
+                        <div className="card-content">
+                            {yemek.malzemeler.join(', ')}
+                        </div>
+                    </li>
+
                     ))}
                 </ul>
+                <div>
+                    <ul>
+                        {yemekList.map(yemek => (
+                            <li className="card" key={yemek.id}>
+                                <img className="card img" src={yemek.href} alt="Örnek Resim" />
+                                <div className="card-baslik">
+                                    {yemek.yemekAdı}
+                                </div>
+                                
+                                <div className="card-content">
+                                    {yemek.malzemeler.join(', ')}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+
+                </div>
+
                 <src></src>
             </div>
 
